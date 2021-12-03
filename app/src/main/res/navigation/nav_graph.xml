@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/top_page">
+
+    <fragment
+        android:id="@+id/top_page"
+        android:name="jp.mirable.busller.ui.top.TopFragment"
+        android:label="fragment_top"
+        tools:layout="@layout/fragment_top">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/setting_page"
+        android:name="jp.mirable.busller.ui.preferences.PreferencesFragment"
+        android:label="fragment_settings">
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="topVM"
+            type="jp.mirable.busller.viewmodel.TopViewModel" />
+        <variable
+            name="listData"
+            type="jp.mirable.busller.model.ListData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/departText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text='@{@string/from_format(topVM.formatTime(listData.timeData.hour, listData.timeData.minute))}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toTopOf="@+id/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/listDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/busImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/listDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bus_vec24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/destTextTop"
+            android:text="@{topVM.formatDest(true, listData.timeData.forSchool, listData.timeData.sangane)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/busImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hoge" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/destTextUnder"
+            android:text="@{topVM.formatDest(false, listData.timeData.forSchool, false)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/destTextTop"
+            app:layout_constraintTop_toBottomOf="@+id/destTextTop"
+            tools:text="Hoge" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/destTextFor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/dest_label"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/destTextUnder"
+            tools:text="Hoge" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

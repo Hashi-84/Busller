@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">バスラー</string>
+    <string name="dest_univ">愛知工科大学</string>
+    <string name="dest_stat">蒲郡駅前</string>
+    <string name="dest_label">行き</string>
+    <string name="next_bus">次のバス:</string>
+    <string name="from_format">%1$s 発</string>
+    <string name="dest_format">%1$d 行き</string>
+    <string name="next_time_dummy">12:00</string>
+    <string name="change_button">切り替え</string>
+    <string name="dep_time">発車まで:</string>
+    <string name="top_string">ホーム</string>
+    <string name="settings">設定</string>
+    <string name="timeline_header">時刻表</string>
+    <string name="sangane_mode">三ヶ根モード</string>
+    <string name="sangane_mode_summary">オンにすると、三ヶ根駅から発車する便も表示します</string>
+    <string name="before_bus">現在時刻より前の便も表示</string>
+    <string name="before_bus_summary">トップページのリストに反映されます</string>
+    <string name="version_header">バージョン情報</string>
+    <string name="application">アプリケーション</string>
+    <string name="dia">ダイヤ情報(ローカル)</string>
+    <string name="ultra">ウルトラスーパームダムダモード</string>
+</resources>

@@ -1,0 +1,47 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/timeline_header">
+
+        <SwitchPreferenceCompat
+            app:key="sangane"
+            app:title="@string/sangane_mode"
+            app:defaultValue="false"
+            app:summary="@string/sangane_mode_summary"/>
+
+        <SwitchPreferenceCompat
+            app:key="beforeBus"
+            app:title="@string/before_bus"
+            app:summary="@string/before_bus_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/version_header">
+
+        <Preference
+            app:key="appVer"
+            app:title="@string/application"/>
+
+        <Preference
+            app:key="diaVer"
+            app:title="@string/dia" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="おまけ"
+        app:key="hoge"
+        app:isPreferenceVisible="false" >
+
+        <SwitchPreferenceCompat
+            app:key="sound"
+            app:title="@string/ultra"
+            app:summary="ExtendedFloatingActionButtonの機能が変更されます"/>
+
+        <SwitchPreferenceCompat
+            app:key="hide"
+            app:title="この項目の表示"
+            app:summary="オフにすると再び非表示になります"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
