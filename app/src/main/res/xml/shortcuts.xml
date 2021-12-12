@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="toSchool"
+        android:enabled="true"
+        android:icon="@drawable/school_vec24"
+        android:shortcutShortLabel="@string/as_school"
+        android:shortcutLongLabel="@string/asl_school"
+        android:shortcutDisabledMessage="@string/ase">
+        <intent
+            android:action="jp.mirable.busller.TO_SCHOOL"
+            android:targetPackage="jp.mirable.busller"
+            android:targetClass="jp.mirable.busller.MainActivity"/>
+    </shortcut>
+    <shortcut
+        android:shortcutId="toStation"
+        android:enabled="true"
+        android:icon="@drawable/train_vec24"
+        android:shortcutShortLabel="@string/as_station"
+        android:shortcutLongLabel="@string/asl_station"
+        android:shortcutDisabledMessage="@string/ase">
+        <intent
+            android:action="jp.mirable.busller.TO_STATION"
+            android:targetPackage="jp.mirable.busller"
+            android:targetClass="jp.mirable.busller.MainActivity"/>
+    </shortcut>
+</shortcuts>

@@ -20,4 +20,9 @@
     <string name="application">アプリケーション</string>
     <string name="dia">ダイヤ情報(ローカル)</string>
     <string name="ultra">ウルトラスーパームダムダモード</string>
+    <string name="ase">このショートカットは使用できません</string>
+    <string name="as_school">大学行き</string>
+    <string name="asl_school">愛知工科大学 行き</string>
+    <string name="as_station">駅行き</string>
+    <string name="asl_station">蒲郡駅南口 行き</string>
 </resources>

@@ -21,8 +21,8 @@ class TopViewModel : ViewModel() {
     //大学行きか判定用のフラグ
     private val _forSchool = MutableLiveData<Boolean>(true)
     val forSchool: LiveData<Boolean> get() = _forSchool
-    fun changeFS() { //切り替えFAB用onClickメソッド
-        _forSchool.value = !_forSchool.value!!
+    fun changeFS(fs: Boolean = !_forSchool.value!!) { //切り替えFAB用onClickメソッド
+        _forSchool.value = fs
     }
 
     //該当パターンの全発車時刻を格納
