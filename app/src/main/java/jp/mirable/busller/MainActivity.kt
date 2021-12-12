@@ -19,9 +19,13 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("MainActivity", "onCreate!")
         super.onCreate(savedInstanceState)
 
+        when (intent.action) {
+            "jp.mirable.busller.TO_STATION" -> topViewModel.changeFS(false)
+            "jp.mirable.busller.TO_SCHOOL" -> topViewModel.changeFS(true)
+            else -> {}
+        }
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
 
