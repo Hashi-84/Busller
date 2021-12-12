@@ -32,7 +32,8 @@ class TopFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        Log.d("TopFragment", "onCreateView!")
         return FragmentTopBinding.inflate(inflater, container, false).apply {
             this.topVM = this@TopFragment.topVM
             lifecycleOwner = viewLifecycleOwner
@@ -49,6 +50,7 @@ class TopFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("TopFragment", "onViewCreated!")
         topVM.run {
             forSchool.observe(viewLifecycleOwner, {
                 handler.removeCallbacks(runnable)
@@ -66,6 +68,8 @@ class TopFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        Log.d("TopFragment", "onResume!")
+
         if (topVM.nextData.value != null) handler.post(runnable)
     }
 

@@ -11,8 +11,8 @@ android {
         applicationId "jp.mirable.busller"
         minSdk 26
         targetSdk 31
-        versionCode 3
-        versionName "0.3"
+        versionCode 4
+        versionName "0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "DIA_VERSION", "\"202110v1\""
