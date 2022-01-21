@@ -1,16 +1,28 @@
 package jp.mirable.busller.viewmodel
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.SharedPreferences
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.preference.PreferenceManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import jp.mirable.busller.MainActivity
+import jp.mirable.busller.R
+import jp.mirable.busller.classes.MyNotification
+import jp.mirable.busller.classes.MyReceiver
 import jp.mirable.busller.classes.SingletonContext
 import jp.mirable.busller.model.ListData
 import jp.mirable.busller.model.OmakeModel
 import jp.mirable.busller.model.TimeData
 import jp.mirable.busller.model.TimetableModel
-import kotlin.math.ceil
+import jp.mirable.busller.ui.MyDialogFragment
+import java.util.*
 
 class TopViewModel : ViewModel() {
 
@@ -41,6 +53,10 @@ class TopViewModel : ViewModel() {
             )
         } else _rvTimeList.value!!.clear()
     }
+
+    //リストで選択された項目格納用
+    private val _chooseLine = MutableLiveData<ListData>()
+    val chooseLine: LiveData<ListData> get() = _chooseLine
 
     /*次発データ
         NULL許容です! <- 次発がない場面も想定されるため
@@ -160,18 +176,38 @@ class TopViewModel : ViewModel() {
         if (timeList.isNotEmpty()) {
             setNextData()
             setLeftSec()
-            when(sw) {
+            when (sw) {
                 0 -> setRVTimeList()
                 1 -> _rvTimeList.value!!.removeAt(0)
             }
         }
     }
 
+    fun testOnClick() {
+        nextData.value?.let { next ->
+            MyNotification.sendDepNotification(
+                context,
+                formatDest(false, next.forSchool, pref.getBoolean("sangane", false)),
+                next.hour,
+                next.minute
+            )
+        }
+    }
+
+    fun addDepNotification(timeData: TimeData) {
+        val calendar = Calendar.getInstance()
+        val intent = Intent(context, MyReceiver::class.java)
+//        val pendingIntent = PendingIntent.getBroadcast(context, )
+    }
+
     val media1 = OmakeModel().loadSoundFile("Melody.mp3", true)
     val media2 = OmakeModel().loadSoundFile("Voice.mp3", false)
     private val _omake1 = MutableLiveData<Boolean>(false)
     val omake1: LiveData<Boolean> get() = _omake1
-    fun turnOmake1(b: Boolean?) { _omake1.value = b!! }
+    fun turnOmake1(b: Boolean?) {
+        _omake1.value = b!!
+    }
+
     fun soundC() {
         if (media1.isPlaying) {
             media1.stop()
