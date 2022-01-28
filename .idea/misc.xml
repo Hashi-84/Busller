@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/drawable-v24/settings_vec24.xml" value="0.44114583333333335" />
+        <entry key="app/src/main/res/drawable/bus_vec24.xml" value="0.44114583333333335" />
+        <entry key="app/src/main/res/drawable/bus_vec24_blue.xml" value="0.44114583333333335" />
+        <entry key="app/src/main/res/drawable/buswithtime_vec24.xml" value="0.44114583333333335" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/drawable/school_vec24.xml" value="0.2609375" />

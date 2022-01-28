@@ -11,6 +11,9 @@
         android:label="fragment_top"
         tools:layout="@layout/fragment_top">
 
+        <action
+            android:id="@+id/action_top_page_to_list_dialog"
+            app:destination="@id/list_dialog" />
     </fragment>
 
     <fragment
@@ -19,5 +22,20 @@
         android:label="fragment_settings">
 
     </fragment>
+
+    <dialog
+        android:id="@+id/list_dialog"
+        android:name="jp.mirable.busller.ui.MyDialogFragment"
+        android:label="fragment_dialog">
+
+        <argument
+            android:name="position"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_list_dialog_to_top_page"
+            app:destination="@id/top_page" />
+    </dialog>
 
 </navigation>

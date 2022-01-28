@@ -25,4 +25,11 @@
     <string name="asl_school">愛知工科大学 行き</string>
     <string name="as_station">駅行き</string>
     <string name="asl_station">蒲郡駅南口 行き</string>
+    <string name="transfer_before_summary">最寄り駅を設定して、発車時刻に間に合う電車を検索できます。</string>
+    <string name="nearStationSet">最寄り駅の指定</string>
+
+    <string name="cancel">キャンセル</string>
+    <string name="btn_noti">5分前に通知</string>
+    <string name="btn_tran">間に合う電車</string>
+    <string name="btn_conn">乗れる電車</string>
 </resources>

@@ -15,6 +15,14 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="ジョルダン乗換案内との連携">
+
+        <EditTextPreference
+            app:key="nearStation"
+            app:title="@string/nearStationSet"/>
+
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/version_header">
 
         <Preference
@@ -28,7 +36,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="おまけ"
+        app:title="開拓者向けオプション"
         app:key="hoge"
         app:isPreferenceVisible="false" >
 
