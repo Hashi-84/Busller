@@ -33,7 +33,7 @@ class MyDialogFragment : DialogFragment() {
 
         val position = args.position
         val station =
-            PreferenceManager.getDefaultSharedPreferences(context).getString("nearStation", "")
+            context?.let { PreferenceManager.getDefaultSharedPreferences(it).getString("nearStation", "") }
         if (position != 999) topVM.rvTimeList.value?.get(position).let {
             it?.timeData?.let { data ->
                 builder.setTitle(
